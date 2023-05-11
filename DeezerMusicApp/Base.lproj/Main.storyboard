@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rgm-ka-Ogn">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Favorites View Controller-->
+        <scene sceneID="yj7-zi-bfU">
+            <objects>
+                <viewController id="Llp-5G-09y" customClass="FavoritesViewController" customModule="DeezerMusicApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9ZI-Tb-V4h">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="zwd-zn-fOC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="0v9-3S-Tab"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="for-sY-57E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2976.3358778625952" y="412.67605633802822"/>
+        </scene>
+        <!--Categories View Controller-->
+        <scene sceneID="6me-3W-foo">
+            <objects>
+                <viewController id="dDp-4f-ao7" customClass="CategoriesViewController" customModule="DeezerMusicApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Jk-GI-ZCs">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Ez9-7P-t2i"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="muj-bT-vIv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Paf-pY-TZT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2994.6564885496182" y="-303.52112676056339"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="oxJ-uI-mVD">
+            <objects>
+                <tabBarController id="rgm-ka-Ogn" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3pa-X5-lsy">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="NiB-Ad-9yC" kind="relationship" relationship="viewControllers" id="v9t-Jl-ZiL"/>
+                        <segue destination="ayx-jZ-8Sv" kind="relationship" relationship="viewControllers" id="pGY-nx-Tt3"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uk5-EA-t0P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1167" y="80"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="48n-Le-G2T">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NiB-Ad-9yC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" id="eeQ-Kc-FQC">
+                        <imageReference key="image" image="music.quarternote.3" catalog="system" symbolScale="default"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mHa-xj-6Ww">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dDp-4f-ao7" kind="relationship" relationship="rootViewController" id="OVX-cS-IE9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qoJ-tB-zwZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2067.93893129771" y="-303.52112676056339"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Izs-r7-LCk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ayx-jZ-8Sv" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="heart" catalog="system" id="zSR-q3-xbP"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iis-nD-O8y">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Llp-5G-09y" kind="relationship" relationship="rootViewController" id="efF-cp-vRl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nGu-YV-ZBQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2068" y="413"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="heart" catalog="system" width="128" height="107"/>
+        <image name="music.quarternote.3" catalog="system" width="128" height="102"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
