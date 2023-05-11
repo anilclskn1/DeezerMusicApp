@@ -20,7 +20,10 @@
 		735DF9522A0D02CB00313424 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DF9512A0D02CB00313424 /* CategoryModel.swift */; };
 		735DF9542A0D062D00313424 /* AccessTokenGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DF9532A0D062D00313424 /* AccessTokenGenerator.swift */; };
 		735DF9582A0D093C00313424 /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DF9572A0D093C00313424 /* CategoriesViewModel.swift */; };
-		735DF95A2A0D435C00313424 /* SelectedCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DF9592A0D435C00313424 /* SelectedCategoryModel.swift */; };
+		735DF95A2A0D435C00313424 /* ArtistsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DF9592A0D435C00313424 /* ArtistsModel.swift */; };
+		735DF95C2A0D46EA00313424 /* ArtistsAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DF95B2A0D46EA00313424 /* ArtistsAPIClient.swift */; };
+		735DF95E2A0D482100313424 /* ArtistsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DF95D2A0D482100313424 /* ArtistsViewController.swift */; };
+		735DF9602A0D4E6000313424 /* ArtistsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DF95F2A0D4E6000313424 /* ArtistsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +41,10 @@
 		735DF9512A0D02CB00313424 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		735DF9532A0D062D00313424 /* AccessTokenGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenGenerator.swift; sourceTree = "<group>"; };
 		735DF9572A0D093C00313424 /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
-		735DF9592A0D435C00313424 /* SelectedCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCategoryModel.swift; sourceTree = "<group>"; };
+		735DF9592A0D435C00313424 /* ArtistsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistsModel.swift; sourceTree = "<group>"; };
+		735DF95B2A0D46EA00313424 /* ArtistsAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistsAPIClient.swift; sourceTree = "<group>"; };
+		735DF95D2A0D482100313424 /* ArtistsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistsViewController.swift; sourceTree = "<group>"; };
+		735DF95F2A0D4E6000313424 /* ArtistsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistsViewModel.swift; sourceTree = "<group>"; };
 		9A12254B8DD3DA2A610831B3 /* Pods_DeezerMusicApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeezerMusicApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD0F91DB0CF091183FD75BA /* Pods-DeezerMusicApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeezerMusicApp.release.xcconfig"; path = "Target Support Files/Pods-DeezerMusicApp/Pods-DeezerMusicApp.release.xcconfig"; sourceTree = "<group>"; };
 		F0FEEC5E1D9CDBCDC3FFA66B /* Pods-DeezerMusicApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeezerMusicApp.debug.xcconfig"; path = "Target Support Files/Pods-DeezerMusicApp/Pods-DeezerMusicApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -114,6 +120,7 @@
 				735DF92F2A0CF68700313424 /* SceneDelegate.swift */,
 				735DF9452A0CF80B00313424 /* CategoriesViewController.swift */,
 				735DF9472A0CF82A00313424 /* FavoritesViewController.swift */,
+				735DF95D2A0D482100313424 /* ArtistsViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -122,7 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				735DF9512A0D02CB00313424 /* CategoryModel.swift */,
-				735DF9592A0D435C00313424 /* SelectedCategoryModel.swift */,
+				735DF9592A0D435C00313424 /* ArtistsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -131,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				735DF9572A0D093C00313424 /* CategoriesViewModel.swift */,
+				735DF95F2A0D4E6000313424 /* ArtistsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -148,6 +156,7 @@
 			children = (
 				735DF94F2A0D024300313424 /* CategoriesAPIClient.swift */,
 				735DF9532A0D062D00313424 /* AccessTokenGenerator.swift */,
+				735DF95B2A0D46EA00313424 /* ArtistsAPIClient.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -269,12 +278,15 @@
 			files = (
 				735DF92E2A0CF68700313424 /* AppDelegate.swift in Sources */,
 				735DF9462A0CF80B00313424 /* CategoriesViewController.swift in Sources */,
-				735DF95A2A0D435C00313424 /* SelectedCategoryModel.swift in Sources */,
+				735DF95C2A0D46EA00313424 /* ArtistsAPIClient.swift in Sources */,
+				735DF95E2A0D482100313424 /* ArtistsViewController.swift in Sources */,
+				735DF95A2A0D435C00313424 /* ArtistsModel.swift in Sources */,
 				735DF9482A0CF82A00313424 /* FavoritesViewController.swift in Sources */,
 				735DF9502A0D024300313424 /* CategoriesAPIClient.swift in Sources */,
 				735DF9522A0D02CB00313424 /* CategoryModel.swift in Sources */,
 				735DF9302A0CF68700313424 /* SceneDelegate.swift in Sources */,
 				735DF94D2A0CFD1C00313424 /* CategoriesCollectionViewCell.swift in Sources */,
+				735DF9602A0D4E6000313424 /* ArtistsViewModel.swift in Sources */,
 				735DF9582A0D093C00313424 /* CategoriesViewModel.swift in Sources */,
 				735DF9542A0D062D00313424 /* AccessTokenGenerator.swift in Sources */,
 			);

@@ -1,5 +1,5 @@
 //
-//  CategoriesViewModel.swift
+//  ArtistsViewModel.swift
 //  DeezerMusicApp
 //
 //  Created by Anıl Çalışkan on 11.05.2023.
@@ -9,25 +9,25 @@ import UIKit
 import Foundation
 import SDWebImage
 
-class CategoriesViewModel {
+class ArtistsViewModel {
     
-    private let apiClient: CategoriesAPIClient
+    private let apiClient: ArtistsAPIClient
     
-    var genres: [DeezerGenre] = []
+    var artists: [selectedCategory] = []
     
-    init(apiClient: CategoriesAPIClient) {
+    init(apiClient: ArtistsAPIClient) {
         self.apiClient = apiClient
     }
     
   
     
-    func fetchCategories(completion: @escaping (Result<Void, APIError>) -> Void) {
-        apiClient.getMusicGenres { [weak self] result in
+    func fetchArtists(completion: @escaping (Result<Void, APIError>) -> Void) {
+        apiClient.getArtists { [weak self] result in
             guard let self = self else { return }
             
             switch result {
-            case .success(let genres):
-                self.genres = genres
+            case .success(let artists):
+                self.artists = artists
                 completion(.success(()))
             case .failure(let error):
                 completion(.failure(error))
@@ -36,35 +36,31 @@ class CategoriesViewModel {
     }
     
     func configure(cell: CategoriesCollectionViewCell, for indexPath: IndexPath) {
-        let genre = genres[indexPath.row]
-        cell.label.text = genre.name
+        let artist = artists[indexPath.row]
+        cell.label.text = artist.name
         
         // Set the image view to use a placeholder image for now
         cell.imageView.image = UIImage(named: "placeholder")
         
-   
-        
         DispatchQueue.global(qos: .background).async {
-            if let image = UIImage(data: try! Data(contentsOf: genre.pictureXl)) {
+            if let image = UIImage(data: try! Data(contentsOf: artist.pictureXl)) {
                 DispatchQueue.main.async {
                     cell.imageView.image = image
                 }
             }
         }
     }
-
-
     
     func numberOfItems() -> Int{
-        return genres.count
+        return artists.count
     }
     
-    func getGenreID(index: Int) -> Int{
-        return genres[index].id
+    func getArtistID(index: Int) -> Int{
+        return artists[index].id
     }
     
-    func getCategoryName(index: Int) -> String{
-        return genres[index].name
+    func getArtistName(index: Int) -> String{
+        return artists[index].name
     }
     
 }

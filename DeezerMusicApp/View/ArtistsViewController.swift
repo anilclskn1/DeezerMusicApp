@@ -1,5 +1,5 @@
 //
-//  CategoriesViewController.swift
+//  ArtistsViewController.swift
 //  DeezerMusicApp
 //
 //  Created by Anıl Çalışkan on 11.05.2023.
@@ -7,9 +7,12 @@
 
 import UIKit
 
-class CategoriesViewController: UIViewController {
+class ArtistsViewController: UIViewController {
     
-    let viewModel = CategoriesViewModel(apiClient: CategoriesAPIClient(baseURL: URL(string: "https://api.deezer.com")!))
+    var categoryName = ""
+    var genreID = 0
+    
+    var viewModel: ArtistsViewModel!
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -24,16 +27,16 @@ class CategoriesViewController: UIViewController {
         return collectionView
     }()
     
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-        self.navigationItem.hidesBackButton = true
-        self.navigationItem.title = "Categories"
+        self.navigationItem.title = categoryName
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        viewModel = ArtistsViewModel(apiClient: ArtistsAPIClient(baseURL: URL(string: "https://api.deezer.com")!, genreID: genreID))
         initViews()
         
-        viewModel.fetchCategories { [weak self] result in
+        viewModel.fetchArtists { [weak self] result in
             guard let self = self else { return }
             
             switch result {
@@ -42,17 +45,11 @@ class CategoriesViewController: UIViewController {
                     self.collectionView.reloadData()
                 }
             case .failure(let error):
-                print(error.localizedDescription)
+                print(error)
             }
         }
         
-        
-        
-        
-        
     }
-    
-    
     
     func initViews(){
         view.addSubview(collectionView)
@@ -64,23 +61,21 @@ class CategoriesViewController: UIViewController {
             collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
         
-    }
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toArtistsVC" {
-            let destinationVC = segue.destination as! ArtistsViewController
-            if let cellData = sender as? CellData {
-                destinationVC.categoryName = cellData.labelText
-                destinationVC.genreID = cellData.genreID
+        getAccessToken { result in
+            switch result{
+            case.success(let t):
+                print(t)
+            case.failure(let e):
+                print(e)
             }
         }
     }
-
     
+
 }
 
-extension CategoriesViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+
+extension ArtistsViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.numberOfItems()
     }
@@ -98,16 +93,8 @@ extension CategoriesViewController: UICollectionViewDataSource, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CategoriesCollectionViewCell
-        let categoryName = viewModel.getCategoryName(index: indexPath.row)
-        let categoryID = viewModel.getGenreID(index: indexPath.row)
-        let cellData = CellData(labelText: categoryName, genreID: categoryID)
-        performSegue(withIdentifier: "toArtistsVC", sender: cellData)
+        let categoryName = viewModel.getArtistName(index: indexPath.row)
+        let categoryID = viewModel.getArtistID(index: indexPath.row)
     }
     
-}
-
-
-struct CellData {
-    let labelText: String
-    let genreID: Int
 }
