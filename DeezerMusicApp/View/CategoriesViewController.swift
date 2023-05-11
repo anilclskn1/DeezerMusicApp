@@ -97,7 +97,6 @@ extension CategoriesViewController: UICollectionViewDataSource, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CategoriesCollectionViewCell
         let categoryName = viewModel.getCategoryName(index: indexPath.row)
         let categoryID = viewModel.getGenreID(index: indexPath.row)
         let cellData = CellData(labelText: categoryName, genreID: categoryID)

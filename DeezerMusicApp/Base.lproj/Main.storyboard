@@ -55,10 +55,29 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="Z4W-zS-RCT"/>
+                    <connections>
+                        <segue destination="vv3-4L-dk7" kind="show" identifier="toArtistVC" id="3Qd-lX-AC6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pfN-F7-HPv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4251" y="-640"/>
+            <point key="canvasLocation" x="3985" y="-304"/>
+        </scene>
+        <!--Artist View Controller-->
+        <scene sceneID="QDd-UR-onV">
+            <objects>
+                <viewController id="vv3-4L-dk7" customClass="ArtistViewController" customModule="DeezerMusicApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="i2R-AE-WZC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="8td-1W-1WW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="yog-E2-qAW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zCA-EP-ixi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4918" y="-304"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="oxJ-uI-mVD">

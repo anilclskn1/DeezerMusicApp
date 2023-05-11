@@ -71,6 +71,17 @@ class ArtistsViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toArtistVC" {
+            let destinationVC = segue.destination as! ArtistViewController
+            if let cellData = sender as? ArtistData {
+                destinationVC.artistName = cellData.labelText
+                destinationVC.artistID = cellData.artistID
+                destinationVC.imageURL = cellData.artistImageURL
+            }
+        }
+    }
+    
 
 }
 
@@ -92,9 +103,16 @@ extension ArtistsViewController: UICollectionViewDataSource, UICollectionViewDel
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CategoriesCollectionViewCell
-        let categoryName = viewModel.getArtistName(index: indexPath.row)
-        let categoryID = viewModel.getArtistID(index: indexPath.row)
+        let artistName = viewModel.getArtistName(index: indexPath.row)
+        let artistID = viewModel.getArtistID(index: indexPath.row)
+        let artistImageURL = viewModel.getImageURL(index: indexPath.row)
+        let artistCell = ArtistData(labelText: artistName, artistID: artistID, artistImageURL: artistImageURL)
+        self.performSegue(withIdentifier: "toArtistVC", sender: artistCell)
     }
     
+}
+struct ArtistData {
+    let labelText: String
+    let artistID: Int
+    let artistImageURL: URL
 }

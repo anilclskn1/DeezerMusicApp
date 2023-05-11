@@ -63,4 +63,8 @@ class ArtistsViewModel {
         return artists[index].name
     }
     
+    func getImageURL(index: Int) -> URL{
+        return artists[index].pictureXl
+    }
+    
 }
