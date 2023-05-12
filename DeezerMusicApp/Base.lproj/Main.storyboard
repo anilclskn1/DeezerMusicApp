@@ -74,10 +74,29 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="yog-E2-qAW"/>
+                    <connections>
+                        <segue destination="9ux-Au-MBv" kind="show" identifier="toTrackVC" id="X7R-fa-g53"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zCA-EP-ixi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4918" y="-304"/>
+        </scene>
+        <!--Tracks View Controller-->
+        <scene sceneID="Vmj-n0-X6B">
+            <objects>
+                <viewController id="9ux-Au-MBv" customClass="TracksViewController" customModule="DeezerMusicApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="C6S-Ah-poZ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="llY-fR-Nuf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="L29-ia-aC9"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cfi-6T-aAf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5860" y="-304"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="oxJ-uI-mVD">
@@ -102,7 +121,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NiB-Ad-9yC" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" id="eeQ-Kc-FQC">
-                        <imageReference key="image" image="music.quarternote.3" catalog="system" symbolScale="default"/>
+                        <imageReference key="image" image="music.note.list" catalog="system" symbolScale="default"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mHa-xj-6Ww">
@@ -140,7 +159,7 @@
     </scenes>
     <resources>
         <image name="heart" catalog="system" width="128" height="107"/>
-        <image name="music.quarternote.3" catalog="system" width="128" height="102"/>
+        <image name="music.note.list" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

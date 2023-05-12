@@ -46,6 +46,14 @@ class CategoriesViewController: UIViewController {
             }
         }
         
+        getAccessToken { result in
+            switch result{
+            case.success(let tok):
+                print(tok)
+            case.failure(let err):
+                print(err)
+            }
+        }
         
         
         

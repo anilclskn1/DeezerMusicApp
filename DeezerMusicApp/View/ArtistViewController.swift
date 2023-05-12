@@ -23,7 +23,6 @@ class ArtistViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        super.viewDidLoad()
         self.navigationItem.title = artistName
         self.navigationController?.navigationBar.prefersLargeTitles = true
         viewModel = AlbumsViewModel(apiClient: AlbumAPIClient(baseURL: URL(string: "https://api.deezer.com")!, artistID: artistID))
@@ -96,6 +95,16 @@ class ArtistViewController: UIViewController {
         ])
        
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toTrackVC" {
+            let destinationVC = segue.destination as! TracksViewController
+            if let cellData = sender as? AlbumData {
+                destinationVC.albumName = cellData.labelText
+                destinationVC.albumID = cellData.albumID
+            }
+        }
+    }
 
 }
 
@@ -112,7 +121,6 @@ extension ArtistViewController: UITableViewDelegate, UITableViewDataSource{
          // Set up the cell's image view, album name label, and release time label
          viewModel.configure(cell: cell, for: indexPath)
 
-         cell.contentView.layoutMargins = .init(top: 0.0, left: 23.5, bottom: 0.0, right: 23.5)
 
          return cell
      }
@@ -124,7 +132,15 @@ extension ArtistViewController: UITableViewDelegate, UITableViewDataSource{
          return 120
      }
     
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let albumtName = viewModel.getArtistName(index: indexPath.row)
+        let albumID = viewModel.getArtistID(index: indexPath.row)
+        let albumCell = AlbumData(labelText: albumtName, albumID: albumID)
+        self.performSegue(withIdentifier: "toTrackVC", sender: albumCell)
+    }
     
-    
+}
+struct AlbumData {
+    let labelText: String
+    let albumID: Int
 }

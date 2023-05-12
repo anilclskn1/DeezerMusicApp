@@ -42,13 +42,9 @@ class ArtistsViewModel {
         // Set the image view to use a placeholder image for now
         cell.imageView.image = UIImage(named: "placeholder")
         
-        DispatchQueue.global(qos: .background).async {
-            if let image = UIImage(data: try! Data(contentsOf: artist.pictureXl)) {
-                DispatchQueue.main.async {
-                    cell.imageView.image = image
-                }
-            }
-        }
+        cell.imageView.sd_setImage(with: artist.pictureXl)
+        
+       
     }
     
     func numberOfItems() -> Int{

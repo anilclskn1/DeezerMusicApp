@@ -29,6 +29,12 @@
 		735DF9662A0D819E00313424 /* ArtistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DF9652A0D819D00313424 /* ArtistModel.swift */; };
 		735DF9682A0D82CE00313424 /* AlbumAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DF9672A0D82CE00313424 /* AlbumAPIClient.swift */; };
 		735DF96C2A0D837A00313424 /* AlbumsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DF96B2A0D837A00313424 /* AlbumsViewModel.swift */; };
+		735DF96E2A0E60FB00313424 /* TracksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DF96D2A0E60FB00313424 /* TracksModel.swift */; };
+		735DF9702A0E614000313424 /* TracksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DF96F2A0E614000313424 /* TracksViewController.swift */; };
+		735DF9722A0E617700313424 /* TracksAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DF9712A0E617700313424 /* TracksAPIClient.swift */; };
+		735DF9742A0E648200313424 /* TracksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DF9732A0E648200313424 /* TracksViewModel.swift */; };
+		735DF9762A0E672600313424 /* TracksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DF9752A0E672500313424 /* TracksTableViewCell.swift */; };
+		735DF9782A0E864300313424 /* FavoriteSongsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DF9772A0E864300313424 /* FavoriteSongsRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +61,12 @@
 		735DF9652A0D819D00313424 /* ArtistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistModel.swift; sourceTree = "<group>"; };
 		735DF9672A0D82CE00313424 /* AlbumAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumAPIClient.swift; sourceTree = "<group>"; };
 		735DF96B2A0D837A00313424 /* AlbumsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewModel.swift; sourceTree = "<group>"; };
+		735DF96D2A0E60FB00313424 /* TracksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracksModel.swift; sourceTree = "<group>"; };
+		735DF96F2A0E614000313424 /* TracksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracksViewController.swift; sourceTree = "<group>"; };
+		735DF9712A0E617700313424 /* TracksAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracksAPIClient.swift; sourceTree = "<group>"; };
+		735DF9732A0E648200313424 /* TracksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracksViewModel.swift; sourceTree = "<group>"; };
+		735DF9752A0E672500313424 /* TracksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracksTableViewCell.swift; sourceTree = "<group>"; };
+		735DF9772A0E864300313424 /* FavoriteSongsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSongsRepository.swift; sourceTree = "<group>"; };
 		9A12254B8DD3DA2A610831B3 /* Pods_DeezerMusicApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeezerMusicApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD0F91DB0CF091183FD75BA /* Pods-DeezerMusicApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeezerMusicApp.release.xcconfig"; path = "Target Support Files/Pods-DeezerMusicApp/Pods-DeezerMusicApp.release.xcconfig"; sourceTree = "<group>"; };
 		F0FEEC5E1D9CDBCDC3FFA66B /* Pods-DeezerMusicApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeezerMusicApp.debug.xcconfig"; path = "Target Support Files/Pods-DeezerMusicApp/Pods-DeezerMusicApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -132,6 +144,7 @@
 				735DF9472A0CF82A00313424 /* FavoritesViewController.swift */,
 				735DF95D2A0D482100313424 /* ArtistsViewController.swift */,
 				735DF9612A0D602000313424 /* ArtistViewController.swift */,
+				735DF96F2A0E614000313424 /* TracksViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -142,6 +155,7 @@
 				735DF9512A0D02CB00313424 /* CategoryModel.swift */,
 				735DF9592A0D435C00313424 /* ArtistsModel.swift */,
 				735DF9652A0D819D00313424 /* ArtistModel.swift */,
+				735DF96D2A0E60FB00313424 /* TracksModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -152,6 +166,8 @@
 				735DF9572A0D093C00313424 /* CategoriesViewModel.swift */,
 				735DF95F2A0D4E6000313424 /* ArtistsViewModel.swift */,
 				735DF96B2A0D837A00313424 /* AlbumsViewModel.swift */,
+				735DF9732A0E648200313424 /* TracksViewModel.swift */,
+				735DF9772A0E864300313424 /* FavoriteSongsRepository.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -161,6 +177,7 @@
 			children = (
 				735DF94C2A0CFD1C00313424 /* CategoriesCollectionViewCell.swift */,
 				735DF9632A0D780900313424 /* TableViewCell.swift */,
+				735DF9752A0E672500313424 /* TracksTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -172,6 +189,7 @@
 				735DF9532A0D062D00313424 /* AccessTokenGenerator.swift */,
 				735DF95B2A0D46EA00313424 /* ArtistsAPIClient.swift */,
 				735DF9672A0D82CE00313424 /* AlbumAPIClient.swift */,
+				735DF9712A0E617700313424 /* TracksAPIClient.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -291,15 +309,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				735DF9742A0E648200313424 /* TracksViewModel.swift in Sources */,
+				735DF9722A0E617700313424 /* TracksAPIClient.swift in Sources */,
 				735DF9642A0D780900313424 /* TableViewCell.swift in Sources */,
 				735DF92E2A0CF68700313424 /* AppDelegate.swift in Sources */,
 				735DF9462A0CF80B00313424 /* CategoriesViewController.swift in Sources */,
 				735DF95C2A0D46EA00313424 /* ArtistsAPIClient.swift in Sources */,
+				735DF9702A0E614000313424 /* TracksViewController.swift in Sources */,
 				735DF9662A0D819E00313424 /* ArtistModel.swift in Sources */,
 				735DF9622A0D602000313424 /* ArtistViewController.swift in Sources */,
 				735DF95E2A0D482100313424 /* ArtistsViewController.swift in Sources */,
+				735DF96E2A0E60FB00313424 /* TracksModel.swift in Sources */,
 				735DF95A2A0D435C00313424 /* ArtistsModel.swift in Sources */,
 				735DF9482A0CF82A00313424 /* FavoritesViewController.swift in Sources */,
+				735DF9782A0E864300313424 /* FavoriteSongsRepository.swift in Sources */,
 				735DF9502A0D024300313424 /* CategoriesAPIClient.swift in Sources */,
 				735DF9522A0D02CB00313424 /* CategoryModel.swift in Sources */,
 				735DF9302A0CF68700313424 /* SceneDelegate.swift in Sources */,
@@ -307,6 +330,7 @@
 				735DF96C2A0D837A00313424 /* AlbumsViewModel.swift in Sources */,
 				735DF9682A0D82CE00313424 /* AlbumAPIClient.swift in Sources */,
 				735DF9602A0D4E6000313424 /* ArtistsViewModel.swift in Sources */,
+				735DF9762A0E672600313424 /* TracksTableViewCell.swift in Sources */,
 				735DF9582A0D093C00313424 /* CategoriesViewModel.swift in Sources */,
 				735DF9542A0D062D00313424 /* AccessTokenGenerator.swift in Sources */,
 			);

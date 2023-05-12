@@ -42,15 +42,8 @@ class CategoriesViewModel {
         // Set the image view to use a placeholder image for now
         cell.imageView.image = UIImage(named: "placeholder")
         
-   
+        cell.imageView.sd_setImage(with: genre.pictureXl)
         
-        DispatchQueue.global(qos: .background).async {
-            if let image = UIImage(data: try! Data(contentsOf: genre.pictureXl)) {
-                DispatchQueue.main.async {
-                    cell.imageView.image = image
-                }
-            }
-        }
     }
 
 
