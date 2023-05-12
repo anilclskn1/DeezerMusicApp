@@ -54,6 +54,10 @@ class TracksViewModel {
      
     }
     
+    func getPreview(at index: Int) -> URL{
+        return tracks[index].preview
+    }
+    
     func getSong(at index: Int) -> Track {
         return tracks[index]
     }

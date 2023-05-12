@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class FavoritesViewController: UIViewController {
     
@@ -13,7 +14,8 @@ class FavoritesViewController: UIViewController {
     let cellId = "cellId"
     let favorites = FavoriteSongsRepository()
     weak var delegate: FavoritesViewControllerDelegate?
-    
+    var player : AVPlayer?
+
 
     
 
@@ -66,6 +68,24 @@ class FavoritesViewController: UIViewController {
         tableView.reloadData()
     }
     
+    func playSound(url: URL)
+    {
+        
+        do{
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: .duckOthers)
+            try AVAudioSession.sharedInstance().setActive(true)
+            player = try AVPlayer(url: url)
+            guard let player = player
+            else
+            {
+                return
+            }
+            player.play()
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }
+    
 }
 extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -101,7 +121,9 @@ extension FavoritesViewController: UITableViewDelegate, UITableViewDataSource{
      }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    }
+        let previewURL = favorites.getPreview(at: indexPath.row)
+        print("previewURL: \(previewURL)")
+        playSound(url: previewURL)    }
     
 }
 

@@ -35,6 +35,7 @@
 		735DF9742A0E648200313424 /* TracksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DF9732A0E648200313424 /* TracksViewModel.swift */; };
 		735DF9762A0E672600313424 /* TracksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DF9752A0E672500313424 /* TracksTableViewCell.swift */; };
 		735DF9782A0E864300313424 /* FavoriteSongsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DF9772A0E864300313424 /* FavoriteSongsRepository.swift */; };
+		735DF97A2A0EDDE100313424 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735DF9792A0EDDE100313424 /* WelcomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		735DF9732A0E648200313424 /* TracksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracksViewModel.swift; sourceTree = "<group>"; };
 		735DF9752A0E672500313424 /* TracksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracksTableViewCell.swift; sourceTree = "<group>"; };
 		735DF9772A0E864300313424 /* FavoriteSongsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteSongsRepository.swift; sourceTree = "<group>"; };
+		735DF9792A0EDDE100313424 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		9A12254B8DD3DA2A610831B3 /* Pods_DeezerMusicApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeezerMusicApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD0F91DB0CF091183FD75BA /* Pods-DeezerMusicApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeezerMusicApp.release.xcconfig"; path = "Target Support Files/Pods-DeezerMusicApp/Pods-DeezerMusicApp.release.xcconfig"; sourceTree = "<group>"; };
 		F0FEEC5E1D9CDBCDC3FFA66B /* Pods-DeezerMusicApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeezerMusicApp.debug.xcconfig"; path = "Target Support Files/Pods-DeezerMusicApp/Pods-DeezerMusicApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				735DF95D2A0D482100313424 /* ArtistsViewController.swift */,
 				735DF9612A0D602000313424 /* ArtistViewController.swift */,
 				735DF96F2A0E614000313424 /* TracksViewController.swift */,
+				735DF9792A0EDDE100313424 /* WelcomeViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				735DF92E2A0CF68700313424 /* AppDelegate.swift in Sources */,
 				735DF9462A0CF80B00313424 /* CategoriesViewController.swift in Sources */,
 				735DF95C2A0D46EA00313424 /* ArtistsAPIClient.swift in Sources */,
+				735DF97A2A0EDDE100313424 /* WelcomeViewController.swift in Sources */,
 				735DF9702A0E614000313424 /* TracksViewController.swift in Sources */,
 				735DF9662A0D819E00313424 /* ArtistModel.swift in Sources */,
 				735DF9622A0D602000313424 /* ArtistViewController.swift in Sources */,

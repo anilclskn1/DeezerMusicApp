@@ -46,7 +46,7 @@ class TracksTableViewCell: UITableViewCell {
         
         heartIcon.contentMode = .scaleAspectFill
         heartIcon.layer.masksToBounds = true
-        heartIcon.tintColor = .white
+        heartIcon.tintColor = UIColor(named: "colorr")
         bgView.addSubview(heartIcon)
         
         // Set up the album name label
@@ -55,7 +55,6 @@ class TracksTableViewCell: UITableViewCell {
         
         // Set up the release time label
         durationTimeLabel.font = UIFont.systemFont(ofSize: 14)
-        durationTimeLabel.textColor = .white
         bgView.addSubview(durationTimeLabel)
         
         let blurEffect = UIBlurEffect(style: .light)

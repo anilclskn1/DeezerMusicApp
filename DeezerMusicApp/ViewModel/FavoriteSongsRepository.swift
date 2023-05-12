@@ -37,6 +37,10 @@ class FavoriteSongsRepository {
         return getFavoriteSongs()[indexPath]
     }
     
+    func getPreview(at index: Int) -> URL{
+        return getFavoriteSongs()[index].preview
+    }
+    
     func formatTimeFromSeconds(_ seconds: Int) -> String {
         let minutes = seconds / 60
         let remainingSeconds = seconds % 60
