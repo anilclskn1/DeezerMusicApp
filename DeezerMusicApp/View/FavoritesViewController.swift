@@ -68,6 +68,11 @@ class FavoritesViewController: UIViewController {
         tableView.reloadData()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        player?.pause()
+    }
+    
     func playSound(url: URL)
     {
         
